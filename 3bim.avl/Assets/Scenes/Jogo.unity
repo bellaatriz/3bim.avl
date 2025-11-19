@@ -146,6 +146,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &350031533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4187240005936063678, guid: b473bcf64e2975441ae958cce2d74e0a, type: 3}
+  m_PrefabInstance: {fileID: 9172876431259180070}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +372,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1750893910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1750893911}
+  m_Layer: 0
+  m_Name: SaidaDoTiro
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1750893911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750893910}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.449, y: 0.024, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1954054111}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1954054110 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2018780102217084615, guid: b473bcf64e2975441ae958cce2d74e0a, type: 3}
+  m_PrefabInstance: {fileID: 9172876431259180070}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1954054111 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 600509177905750301, guid: b473bcf64e2975441ae958cce2d74e0a, type: 3}
+  m_PrefabInstance: {fileID: 9172876431259180070}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1954054113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954054110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb3b7a712703d84c945630ac458feb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saidaDoTiro: {fileID: 1750893911}
+  bala: {fileID: 8716852490028520260, guid: d2df8f698b3c85842a79fde4a2705a3f, type: 3}
+  intervaloDeDisparo: 0.2
+  cursor: {fileID: 350031533}
 --- !u!1001 &4630179687566451263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -550,9 +612,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2965824479540954518, guid: b473bcf64e2975441ae958cce2d74e0a, type: 3}
+      propertyPath: arma
+      value: 
+      objectReference: {fileID: 1954054111}
     - target: {fileID: 5452621632028865364, guid: b473bcf64e2975441ae958cce2d74e0a, type: 3}
       propertyPath: m_FlipX
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7369169013848977013, guid: b473bcf64e2975441ae958cce2d74e0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -596,11 +662,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 600509177905750301, guid: b473bcf64e2975441ae958cce2d74e0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1750893911}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1210741225888489426, guid: b473bcf64e2975441ae958cce2d74e0a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 27847059}
+    - targetCorrespondingSourceObject: {fileID: 2018780102217084615, guid: b473bcf64e2975441ae958cce2d74e0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1954054113}
   m_SourcePrefab: {fileID: 100100000, guid: b473bcf64e2975441ae958cce2d74e0a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -15,7 +15,7 @@ public class Player : Personagem
         animator = GetComponent<Animator>();
     }
 
-     
+    
 
     void Update()
     {
@@ -33,13 +33,13 @@ public class Player : Personagem
             
         if (Input.GetKey(KeyCode.W))
         {
-            gameObject.transform.position += new Vector3(getVelocidade() * Time.deltaTime, 0);
+            gameObject.transform.position += new Vector3(0, getVelocidade() * Time.deltaTime, 0);
             andando = true;
         }
         
         if (Input.GetKey(KeyCode.S))
         {
-            gameObject.transform.position -= new Vector3(getVelocidade() * Time.deltaTime, 0);
+            gameObject.transform.position -= new Vector3(0, getVelocidade() * Time.deltaTime, 0);
             andando = true;
         }
         
@@ -54,5 +54,17 @@ public class Player : Personagem
             gameObject.transform.position -= new Vector3(getVelocidade() * Time.deltaTime, 0, 0 );
             andando = true;
         }
+        
+        animator.SetBool("andando", andando);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 }
