@@ -11,7 +11,7 @@ public class Player : Personagem
     
     void Start()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 

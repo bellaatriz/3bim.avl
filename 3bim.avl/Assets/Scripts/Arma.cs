@@ -19,7 +19,7 @@ public class Arma : MonoBehaviour
     
     void Start()
     {
-       camara = GetComponent<Camera>();
+       camara =  Camera.main;
        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -36,7 +36,7 @@ public class Arma : MonoBehaviour
         }
         
         // Distância da camera ao objeto. Precisamos disso para fazer o calculo correto. 
-        float camDis = GetComponent<Camera>().transform.position.y - transform.position.y;
+        float camDis = camara.transform.position.y - transform.position.y;
         
         //Obtém a posição do mouse no espaço mundial. usando camDis para o eixo Z.
         Vector3 mouse = camara.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, camDis));

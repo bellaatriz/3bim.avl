@@ -7,7 +7,7 @@ public class Inimigo : Personagem
     public float raioDeVisao = 1;
     public CircleCollider2D _visaoCollider2D;
 
-    [SerializeField] private Transform posicaoDoPlayer;
+    [SerializeField] private Transform posicaoPlayer;
     
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -30,10 +30,10 @@ public class Inimigo : Personagem
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         
-        if (posicaoDoPlayer == null)
+        if (posicaoPlayer == null)
         {
-            posicaoDoPlayer =  GameObject.Find("Player").transform;
-           // posicaoDoPlayer =  GameObject.FindGameObjectsWithTag("Player")[0].transform;
+            posicaoPlayer =  GameObject.FindGameObjectWithTag("Player").transform;
+           // posicaoPlayer =  GameObject.FindGameObjectsWithTag("Player")[0].transform;
         }
         
         raioDeVisao = _visaoCollider2D.radius;
@@ -46,24 +46,24 @@ public class Inimigo : Personagem
         if (getVida() > 0)
         {
 
-            if (posicaoDoPlayer.position.x - transform.position.x > 0)
+            if (posicaoPlayer.position.x - transform.position.x > 0)
             {
                 spriteRenderer.flipX = false;
             }
 
-            if (posicaoDoPlayer.position.x - transform.position.x < 0)
+            if (posicaoPlayer.position.x - transform.position.x < 0)
             {
                 spriteRenderer.flipX = true;
             }
 
 
-            if (posicaoDoPlayer != null &&
-                Vector3.Distance(posicaoDoPlayer.position, transform.position) <= raioDeVisao)
+            if (posicaoPlayer != null &&
+                Vector3.Distance(posicaoPlayer.position, transform.position) <= raioDeVisao)
             {
-                Debug.Log("Posição do Pluer" + posicaoDoPlayer.position);
+                Debug.Log("No raio de visão" + posicaoPlayer.position);
 
                 transform.position = Vector3.MoveTowards(transform.position,
-                    posicaoDoPlayer.transform.position,
+                    posicaoPlayer.transform.position,
                     getVelocidade() * Time.deltaTime);
 
                 andando = true;
@@ -79,7 +79,7 @@ public class Inimigo : Personagem
 
     }
 
-    public void desativa()
+    public void desative()
     {
         //desativa o objeto do Inimigo
         //gameObject.SetActive(false);
@@ -98,6 +98,7 @@ public class Inimigo : Personagem
             //collision.gameObject.GetComponent<Personagem>().recebeDano(getDano());
             
             //sera a vida do inimigo
+            setVida(0);
           
         }
     }
