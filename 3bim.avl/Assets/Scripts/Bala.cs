@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class Bala : MonoBehaviour
 {
-    [SerializeField] private int dano = 1; 
+    [SerializeField] private int dano = 1;
     [SerializeField] private float velocidade = 1.5f;
-    
+
     private Renderer m_renderer;
 
     public void setDano(int dano)
@@ -17,8 +17,8 @@ public class Bala : MonoBehaviour
     {
         return this.dano;
     }
-    
-    
+
+
     void Start()
     {
         m_renderer = GetComponent<Renderer>();
@@ -39,11 +39,16 @@ public class Bala : MonoBehaviour
     {
         if (colisao.gameObject.CompareTag("Inimigo"))
         {
-            //causa dano ao inimigo
-            int novaVida = colisao.gameObject.GetComponent<Personagem>().getVida() - getDano();
-            colisao.gameObject.GetComponent<Personagem>().setVida(novaVida);
-             Destroy(this.gameObject);
+            Personagem inimigo = colisao.gameObject.GetComponent<Personagem>();
+
+            if (inimigo != null)
+            {
+                int novaVida = inimigo.getVidas() - getDano();
+                inimigo.setVidas(novaVida);
+
+                Destroy(this.gameObject);
+            }
         }
-        
+
     }
 }

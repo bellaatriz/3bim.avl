@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class BarraDeVida : MonoBehaviour
@@ -15,7 +14,7 @@ public class BarraDeVida : MonoBehaviour
         if (personagem != null & sliderVidasRestantes != null)
         {
             sliderVidasRestantes.minValue = 0;
-            sliderVidasRestantes.maxValue = personagem.getVida();
+            sliderVidasRestantes.maxValue = personagem.getVidas();
         }
     }
 
@@ -24,7 +23,7 @@ public class BarraDeVida : MonoBehaviour
     {
         if (sliderVidasRestantes != null)
         {
-            vidasRestantes =  personagem.getVida();
+            vidasRestantes = personagem.getVidas();
             sliderVidasRestantes.value = vidasRestantes;
         }
     }
