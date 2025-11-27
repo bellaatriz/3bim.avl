@@ -7,7 +7,7 @@ public class Player : Personagem
 
     public Transform arma;
 
-    private bool andando = false;
+    private bool Andando = false;
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class Player : Personagem
 
     void Update()
     {
-        andando = false;
+        Andando = false;
 
         float rotZ = arma.rotation.eulerAngles.z;
 
@@ -34,28 +34,28 @@ public class Player : Personagem
         if (Input.GetKey(KeyCode.W))
         {
             gameObject.transform.position += new Vector3(0, getVelocidade() * Time.deltaTime, 0);
-            andando = true;
+            Andando = true;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             gameObject.transform.position -= new Vector3(0, getVelocidade() * Time.deltaTime, 0);
-            andando = true;
+            Andando = true;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             gameObject.transform.position += new Vector3(getVelocidade() * Time.deltaTime, 0, 0);
-            andando = true;
+            Andando = true;
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             gameObject.transform.position -= new Vector3(getVelocidade() * Time.deltaTime, 0, 0);
-            andando = true;
+            Andando = true;
         }
 
-        animator.SetBool("andando", andando);
+        animator.SetBool("Andando", Andando);
 
 
 

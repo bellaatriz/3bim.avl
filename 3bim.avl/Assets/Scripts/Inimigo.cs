@@ -13,6 +13,8 @@ public class Inimigo : Personagem
     private Animator animator;
 
     private bool andando = false;
+    
+    public AudioSource audioSource;
 
     public void setDano(int dano)
     {
@@ -35,6 +37,7 @@ public class Inimigo : Personagem
 
         raioDeVisao = _visaoCollider2D.radius;
 
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -56,7 +59,7 @@ public class Inimigo : Personagem
             if (posicaoPlayer != null &&
                 Vector3.Distance(posicaoPlayer.position, transform.position) <= raioDeVisao)
             {
-                Debug.Log("No raio de visão" + posicaoPlayer.position);
+                Debug.Log("No raio de visï¿½o" + posicaoPlayer.position);
 
                 transform.position = Vector3.MoveTowards(transform.position,
                     posicaoPlayer.transform.position,
@@ -78,6 +81,11 @@ public class Inimigo : Personagem
     {
         Destroy(gameObject);
         Debug.Log("Teste...");
+    }
+    
+    public void playSound()
+    {
+        audioSource.Play();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
